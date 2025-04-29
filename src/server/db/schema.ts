@@ -4,7 +4,7 @@ import { text,  index, singlestoreTableCreator, bigint} from 'drizzle-orm/single
 
 export const createTable = singlestoreTableCreator((name) => `GDrive101_${name}`)
 
-export const files = createTable('files_table',{
+export const files_table = createTable('files_table',{
   id: bigint('id',{mode: 'number', unsigned: true}).primaryKey().autoincrement(),
   name: text('name').notNull(),
   size: text('size').notNull(),
@@ -16,7 +16,7 @@ export const files = createTable('files_table',{
   ]
 })
 
-export const folders = createTable('folders_table',{
+export const folders_table = createTable('folders_table',{
   id: bigint('id',{mode: 'number', unsigned: true}).primaryKey().autoincrement(),
   name: text('name').notNull(),
   parent: bigint('parent',{mode: 'number', unsigned: true})
