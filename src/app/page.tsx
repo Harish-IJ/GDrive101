@@ -1,13 +1,10 @@
-import { db } from "~/server/db";
-import {
-  files as fileSchema,
-  folders as folderSchema,
-} from "~/server/db/schema";
-import DriveContents from "./drive-contents";
-
 // SERVER COMPONENT
-export default async function GoogleDriveClone() {
-  const files = await db.select().from(fileSchema);
-  const folders = await db.select().from(folderSchema);
-  return <DriveContents files={files} folders={folders} />;
+export default async function HomePage() {
+  return (
+    <section className="flex h-screen items-center justify-center">
+      <div>
+        <p className="italic">Upskilling Myself in the mean time</p>
+      </div>
+    </section>
+  );
 }
